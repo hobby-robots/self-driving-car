@@ -27,6 +27,9 @@ func main() {
 	thrustPin1.Output()
 	thrustPin2.Output()
 
+	steeringPin1.Output()
+	steeringPin2.Output()
+
 	pins := []rpio.Pin{thrustPin1, thrustPin2}
 
 	for i := 1; i <= 5; i++ {
