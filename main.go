@@ -2,17 +2,18 @@ package main
 
 import (
 	"fmt"
-	"github.com/stianeikeland/go-rpio"
 	"os"
 	"time"
+
+	"github.com/stianeikeland/go-rpio"
 )
 
 var (
-	pin1 = rpio.Pin(17)
-	pin2 = rpio.Pin(27)
+	thrustPin1 = rpio.Pin(17)
+	thrustPin2 = rpio.Pin(27)
 
-	pin3 = rpio.Pin(15)
-	pin4 = rpio.Pin(18)
+	steeringPin1 = rpio.Pin(15)
+	steeringPin2 = rpio.Pin(18)
 )
 
 func main() {
@@ -23,10 +24,10 @@ func main() {
 
 	defer rpio.Close()
 
-	pin1.Output()
-	pin2.Output()
+	thrustPin1.Output()
+	thrustPin2.Output()
 
-	pins := []rpio.Pin{pin1, pin2}
+	pins := []rpio.Pin{thrustPin1, thrustPin2}
 
 	for i := 1; i <= 5; i++ {
 		pins[i%2].High()
@@ -34,6 +35,6 @@ func main() {
 		time.Sleep(1 * time.Second)
 	}
 
-	pin1.Low()
-	pin2.Low()
+	thrustPin1.Low()
+	thrustPin2.Low()
 }
