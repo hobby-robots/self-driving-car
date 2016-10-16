@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Car UI</title>
+  <link href="index.css" rel="stylesheet">
+</head>
+<body>
+  <div>
+    Car UI
+    <div class="buttons">
+      <button class="forward" onclick="forward()">Forward</button>
+      <br/>
+      <button onclick="left()">Left</button>
+      <button onclick="backward()">Backward</button>
+      <button onclick="right()">Right</button>
+    </div>
+
+    <div class='reset-area'>
+      <button onclick="resetSteering()">Reset Steering</button>
+      <button onclick="resetThrust()">Reset Thrust</button>
+    </div>
+  </div>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
