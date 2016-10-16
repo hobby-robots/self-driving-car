@@ -19,7 +19,7 @@ func main() {
 
 	fmt.Printf("Serving static %s\n", os.Args)
 
-	server := car.NewServer(8080, steering, path)
+	server := car.NewServer(9000, steering, path)
 	if err := server.Start(); err != nil {
 		panic(err)
 	}
