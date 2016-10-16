@@ -8,8 +8,8 @@ import (
 )
 
 func main() {
-	//steering := car.NewSteering(17, 27, 15, 18)
-	steering := car.DebugSteering()
+	steering := car.NewSteering(17, 27, 15, 18)
+	//steering := car.DebugSteering()
 	defer steering.Close()
 
 	path := "/static"
@@ -19,7 +19,7 @@ func main() {
 
 	fmt.Printf("Serving static %s\n", os.Args)
 
-	server := car.NewServer(9000, steering, path)
+	server := car.NewServer(8080, steering, path)
 	if err := server.Start(); err != nil {
 		panic(err)
 	}
